@@ -7,10 +7,12 @@ $empleadoRecibido = new Empleado ($_POST["txtNombre"], $_POST["txtApellido"], $_
 
 $empleadoRecibido = explode("-", $empleadoRecibido->ToString());
 
+$empleadoArchivoTexto = new Empleado ($empleadoRecibido[0], $empleadoRecibido[1], $empleadoRecibido[2], $empleadoRecibido[3], $empleadoRecibido[4], $empleadoRecibido[5]);
+
 $empleadoPrueba = new Empleado("Facundo","Varela","34512744","Masculino", "101939", "14000");
 
 $ar = fopen("Empleados.txt", "a+");
-$cant = fwrite($ar, $empleadoPrueba->ToString() . "\r" . "\n");
+$cant = fwrite($ar, $empleadoArchivoTexto->ToString() . "\r" . "\n");
 
 if ($cant > 0)
 {
