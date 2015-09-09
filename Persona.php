@@ -42,7 +42,7 @@ abstract class Persona
 
 	public function ToString ()
 	{
-		return "nombre: ".$this->_nombre."<br>"."Apellido: ".$this->_apellido."<br>"."DNI: ".$this->_dni."<br>"."Sexo: ".$this->_sexo;
+		return $this->_nombre. "-" .$this->_apellido. "-" .$this->_dni. "-" .$this->_sexo."-";
 	}
 
 }

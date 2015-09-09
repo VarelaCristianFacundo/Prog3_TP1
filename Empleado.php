@@ -29,7 +29,7 @@ class Empleado extends Persona
 
 	public function Tostring ()
 	{
-		return parent::Tostring() . "<br>" . "Legajo: " . $this->_legajo . "<br>" . "Sueldo: " . $this->_sueldo;
+		return parent::Tostring() . $this->_legajo. "-" .  $this->_sueldo;
 	}
 
 }
