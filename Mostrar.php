@@ -16,8 +16,7 @@ require_once ("Fabrica.php");
 			$miEmpleadoPrueba = new Empleado ($pruebaDos[0], $pruebaDos[1], $pruebaDos[2], $pruebaDos[3], $pruebaDos[4], $pruebaDos[5]);
 			echo $miEmpleadoPrueba->Tostring()."<br>";
 		}
-		echo "<br>".count($pruebaDos);
-
+		
 	}
 
 	fclose($ar);
