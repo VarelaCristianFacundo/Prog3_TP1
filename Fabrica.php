@@ -12,35 +12,33 @@ class Fabrica
 	}
 
 	public function AgregarEmpleado ($persona)
-	{
-		array_push($this->_empleados, $persona);
-		$this->EliminarEmpleadosRepetidos();
+	{		
+		array_push($this->_empleados, $persona);	
 	}
 
 	public function CalcularSueldos ()
-	{
+	{		
+		$this->EliminarEmpleadosRepetidos();	
 		$total = 0;
 		foreach ($this->_empleados as $prueba) 
 		{
 			$total += $prueba->GetSueldo();
 		}
-		echo "<br>" . "Sueldo Total de Empleados: " . $total;
 	}
 
 	public function EliminarEmpleado ($person)
-	{
-		for ($i=0; $i <$this->_empleados->ob_get_length(oid) ; $i++) 
+	{		
+		for ($i=0; $i < count($this->_empleados); $i++) 
 		{ 
-		
-			if ($key == $person)
+			if ($this->_empleados[$i] == $person)
 			{
-				unset ($this->_empleados[i]);
+				unset($this->_empleados[$i]);
 			}
 		}
 	}
 	private function EliminarEmpleadosRepetidos()
 	{
-
+		$this->_empleados = array_unique($this->_empleados, SORT_REGULAR);
 	}
 
 	public function Tostring ()
