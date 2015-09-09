@@ -4,7 +4,9 @@ require_once ("Empleado.php");
 require_once ("Fabrica.php");
 
 $empleadoRecibido = new Empleado ($_POST["txtNombre"], $_POST["txtApellido"], $_POST["txtDNI"], $_POST["txtSexo"], $_POST["txtLegajo"], $_POST["txtSueldo"]);
-echo $empleadoRecibido->ToString();
+
+$empleadoRecibido = explode("-", $empleadoRecibido->ToString());
+
 $empleadoPrueba = new Empleado("Facundo","Varela","34512744","Masculino", "101939", "14000");
 
 $ar = fopen("Empleados.txt", "a+");
