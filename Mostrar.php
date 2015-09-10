@@ -8,13 +8,16 @@ require_once ("Fabrica.php");
 	while (!feof($ar)) 
 	{
 	//	echo fgets($ar), "<br/>";
-		$prueba = fgets($ar);
-		$pruebaDos = explode("-", $prueba);
-		if (count($pruebaDos) >1)
+		$LeoArchivo = fgets($ar);
+		$textoLimpio = explode("-", $LeoArchivo);
+		if (count($textoLimpio) >1)
 		{
-
-			$miEmpleadoPrueba = new Empleado ($pruebaDos[0], $pruebaDos[1], $pruebaDos[2], $pruebaDos[3], $pruebaDos[4], $pruebaDos[5]);
-			echo $miEmpleadoPrueba->Tostring()."<br>";
+			$miEmpleadoPrueba = new Empleado ($textoLimpio[0], $textoLimpio[1], $textoLimpio[2], $textoLimpio[3], $textoLimpio[4], $textoLimpio[5]);
+			
+			foreach ($textoLimpio as $key) 
+			{
+				echo $key . "<br>";
+			}
 		}
 		
 	}
